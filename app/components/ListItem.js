@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: "row",
 		justifyContent: "flex-start",
-		paddingLeft: 20
+		padding: 15
 	},
 	detailContainer: {
 		flexDirection: "column",

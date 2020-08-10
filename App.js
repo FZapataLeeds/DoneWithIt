@@ -5,10 +5,11 @@ import ShowItemScreen from './app/screens/ShowItemScreen';
 import Card from './app/components/Card'
 import { View } from 'react-native';
 import MessagesScreen from './app/screens/MessagesScreen';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 
 export default function App() {
 //   return <WelcomeScreen />;
 return (
-	<WelcomeScreen />
+	<MessagesScreen />
 	);
 }

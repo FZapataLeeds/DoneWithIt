@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList } from 'react-native';
 
 import Screen from '../components/Screen';
 import ListItem from '../components/ListItem';
+import ListItemSeparator from '../components/ListItemSeparator'
 
 const MESSAGES = [{
 		id: 1,
@@ -28,6 +29,7 @@ function MessagesScreen(props) {
 						image={item.image}
 						title={item.title}
 						subtitle={item.subtitle} />} 
+				ItemSeparatorComponent={ListItemSeparator}
 			/>
 		</Screen>
 	);
