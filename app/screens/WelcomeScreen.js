@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Image, Text, ImageBackground } from 'react-native';
+import { StyleSheet, View, Button, ImageBackground } from 'react-native';
 import LogoComponent from '../components/LogoComponent';
+import AppButton from '../components/AppButton';
 
 
 function WelcomeScreen(props) {
@@ -9,8 +10,8 @@ function WelcomeScreen(props) {
 		style={styles.background}
 		source={require('../assets/background.jpg')}>
 			<LogoComponent/>
-			<View style={styles.loginButton}/>
-			<View style={styles.registerButton}/>
+			<AppButton style={styles.button} title={'Login'} onPress={() => console.log('Pressed')}/>
+			<AppButton style={styles.button} title={'Register'} onPress={() => console.log('Pressed')} color={'#79cdcd'}/>
 	</ImageBackground>
   );
 }
@@ -19,16 +20,12 @@ const styles = StyleSheet.create({
 	background: {
 		flex: 1,
 		justifyContent: "flex-end",
-		alignItems: "center"
-	},
-	loginButton: {
-		backgroundColor: 'tomato',
-		height: 70,
+		alignItems: "center",
 		width: '100%'
 	},
-	registerButton: {
-		backgroundColor: '#79cdcd',
-		height:70,
+	button: {
+		paddingHorizontal: 15,
+		marginVertical: 10,
 		width: '100%'
 	}
 });
