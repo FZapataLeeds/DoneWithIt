@@ -21,9 +21,12 @@ const INITIAL_MESSAGES = [{
 
 function MessagesScreen(props) {
 	const [messages, setMessages] = useState(INITIAL_MESSAGES);
+	const [refreshing, setRefreshing] = useState(false);
+
 	const handleDeleteMessage = (message) => {
 		setMessages(messages.filter(m => m.id !== message.id));
 	}
+
 	return (
 		<Screen>
 			<FlatList 
@@ -35,8 +38,19 @@ function MessagesScreen(props) {
 						title={item.title}
 						subtitle={item.subtitle}
 						onPress={() => console.log('Message text: ', item)}
-						renderRightActions={() => <ListItemDeleteAction onPress={() => handleDeleteMessage(item)}/>} />} 
+						renderRightActions={ () => <ListItemDeleteAction onPress={() => handleDeleteMessage(item)}/> } />} 
 				ItemSeparatorComponent={ListItemSeparator}
+				refreshing={refreshing}
+				onRefresh={() => {
+					setMessages([
+						{
+							id: 2,
+							image: require('../assets/mosh.jpg'),
+							title: 'title 2',
+							subtitle: 'sub 2'
+						}
+					]);
+				}}
 			/>
 		</Screen>
 	);
